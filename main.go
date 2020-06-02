@@ -91,7 +91,7 @@ func getPotentialAlternatives(char byte) []byte {
 	case 'k':
 		return []byte{'j', 'l'}
 	case 'l':
-		return []byte{'k', ';'}
+		return []byte{'k', ';', '.', ','}
 	case 'm':
 		return []byte{'n', ','}
 	case 'n':
@@ -120,6 +120,10 @@ func getPotentialAlternatives(char byte) []byte {
 		return []byte{'h', 'u', 't'}
 	case 'z':
 		return []byte{'a', 'x'}
+	case ';':
+		return []byte{'l'}
+	case '[':
+		return []byte{'p'}
 	}
 
 	return chars
@@ -204,6 +208,9 @@ func main() {
 	// try([]byte("ThisOsASecret"))
 	//                 ^
 
-	try([]byte("ThisIsASecrer"))
-	//                      ^
+	// try([]byte("ThisIsASecrer"))
+	//                         ^
+
+	try([]byte("RhisIsASecret"))
+	//          ^
 }
